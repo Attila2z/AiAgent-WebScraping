@@ -1,7 +1,10 @@
 ## **1. Project Setup**
 
 ### 1.1 Clone project folder
-
+```bash
+mkdir WebScraping
+cd WebScraping
+````
 
 ### 1.2 Create a virtual environment (Python 3.12)
 ```bash -powershell

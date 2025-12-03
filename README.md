@@ -16,7 +16,7 @@ python --version
 
 ## 2. Install the required dependencies (inside venv)
 ```bash -powershell
-C:\Users\xxxxx\autogen_assignment2\venv\Scripts\python.exe -m pip install --upgrade pip
+C:\Users\xxxxx\WebScraping\venv\Scripts\python.exe -m pip install --upgrade pip
 ````
 ```bash -powershell
 pip install "autogen-agentchat @ git+https://github.com/patrickstolc/autogen.git@0.2#egg=autogen-agentchat"

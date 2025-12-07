@@ -1,10 +1,6 @@
 ## **1. Project Setup**
 
 ### 1.1 Clone project folder
-```bash
-mkdir WebScraping
-cd WebScraping
-````
 
 ### 1.2 Create a virtual environment (Python 3.12)
 ```bash -powershell
@@ -12,23 +8,10 @@ py -3.12 -m venv venv
 .\venv\Scripts\Activate
 ````
 
-### 1.3 Check python version inside venv
-```bash -powershell
-python --version
-````
 
-## 2. Install the required dependencies (inside venv)
-```bash -powershell
-python.exe -m pip install --upgrade pip
+## 2. Install the required dependencies (inside venv) from requirement.txt
 
-````
-```bash -powershell
-pip install "autogen-agentchat @ git+https://github.com/patrickstolc/autogen.git@0.2#egg=autogen-agentchat"
-pip install autogen==0.3.1
-pip install mistralai==1.2.3
-pip install ollama==0.3.3
-pip install fix-busted-json==0.0.18
-````
+
 
 ### 2.1 Check instalation
 ```bash -powershell

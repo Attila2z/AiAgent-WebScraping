@@ -1,0 +1,28 @@
+[
+  {
+    "id": "meta_price",
+    "url": "https://www.google.com/finance/quote/META:NASDAQ",
+    "task": "Extract the current stock price of META in USD from this Google Finance page. Ignore any global indices such as DAX, FTSE 100, CAC 40, etc. Use the price that is clearly associated with Meta Platforms Inc.",
+    "agent_output": {
+      "answer": "The current stock price of META is $673.42 USD.",
+      "extracted_value": 673.42,
+      "unit_or_currency": "USD",
+      "confidence": "high",
+      "notes": "The price was extracted from the 'META \u2022 NASDAQ' section at the top of the page."
+    },
+    "parsed_price_from_html": 673.42
+  },
+  {
+    "id": "meta_summary",
+    "url": "https://www.google.com/finance/quote/META:NASDAQ",
+    "task": "Summarize the key information about META from this page.",
+    "agent_output": {
+      "answer": "Meta Platforms Inc (META) stock price is $673.42 after hours, with a daily range of $662.39 - $674.69 and a 52-week range of $479.80 - $796.25. The market cap is 1.70T USD, and the average volume is 23.22M shares. The P/E ratio is 29.80, and the dividend yield is 0.31%.",
+      "extracted_value": 673.42,
+      "unit_or_currency": "USD",
+      "confidence": "high",
+      "notes": "The stock price is the most recent after-hours price, and the ranges are the daily and 52-week highs and lows."
+    },
+    "parsed_price_from_html": 673.42
+  }
+]

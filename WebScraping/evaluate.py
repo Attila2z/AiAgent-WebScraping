@@ -4,7 +4,6 @@ from pathlib import Path
 from WebScraping.tools import (
     fetch_page_html,
     html_to_visible_text,
-    extract_google_finance_price,
     FetchError,
 )
 from WebScraping.agent import create_web_scraping_agent, ask_agent
@@ -41,7 +40,6 @@ def run_use_cases(output_path: str = "use_cases_outputs.json") -> None:
         try:
             html = fetch_page_html(url)
             text = html_to_visible_text(html)
-            parsed_price = extract_google_finance_price(html)
             agent_output = ask_agent(agent, task, url, text)
         except FetchError as exc:
             agent_output = {
@@ -59,7 +57,7 @@ def run_use_cases(output_path: str = "use_cases_outputs.json") -> None:
                 "url": url,
                 "task": task,                     # input / prompt
                 "agent_output": agent_output,     # JSON structure from agent
-                "parsed_price_from_html": parsed_price,  # heuristic baseline (may be None)
+
             }
         )
 

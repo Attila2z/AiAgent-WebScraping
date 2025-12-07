@@ -8,21 +8,19 @@
       "extracted_value": 673.42,
       "unit_or_currency": "USD",
       "confidence": "high",
-      "notes": "The price was extracted from the 'META \u2022 NASDAQ' section at the top of the page."
-    },
-    "parsed_price_from_html": 673.42
+      "notes": "The price is clearly associated with Meta Platforms Inc and is the most recent closing price."
+    }
   },
   {
     "id": "meta_summary",
     "url": "https://www.google.com/finance/quote/META:NASDAQ",
     "task": "Summarize the key information about META from this page.",
     "agent_output": {
-      "answer": "Meta Platforms Inc (META) stock price is $673.42 after hours, with a daily range of $662.39 - $674.69 and a 52-week range of $479.80 - $796.25. The market cap is 1.70T USD, and the average volume is 23.22M shares. The P/E ratio is 29.80, and the dividend yield is 0.31%.",
+      "answer": "Meta Platforms Inc (META) is trading at $673.42 after hours, down 0.24% from the previous close of $671.80. The stock has a market cap of 1.70T USD and a P/E ratio of 29.80. It is listed on the NASDAQ.",
       "extracted_value": 673.42,
       "unit_or_currency": "USD",
       "confidence": "high",
-      "notes": "The stock price is the most recent after-hours price, and the ranges are the daily and 52-week highs and lows."
-    },
-    "parsed_price_from_html": 673.42
+      "notes": "The price is the most recent after-hours price, not the current price."
+    }
   }
 ]

@@ -1,8 +1,10 @@
-python-dotenv
-requests
-beautifulsoup4
+autogen-agentchat @ git+https://github.com/patrickstolc/autogen.git@0.2#egg=autogen-agentchat
 mistralai
 autogen==0.3.1
 mistralai==1.2.3
 ollama==0.3.3
 fix-busted-json==0.0.18
+python-dotenv
+requests
+beautifulsoup4
+

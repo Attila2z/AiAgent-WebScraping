@@ -1,21 +1,13 @@
 import json
-
-# Try both import styles so it works with different AutoGen setups.
-try:
-    # AutoGen 0.3.x style
-    from autogen import AssistantAgent  # type: ignore
-except ImportError:  # pragma: no cover
-    # Newer AgentChat layout
-    from autogen_agentchat.agents import AssistantAgent  # type: ignore
-
+from autogen import AssistantAgent
 from config import LLM_CONFIG
 
 SYSTEM_MESSAGE = """You are a WebScrapingAgent.
 
 You will receive:
-1) A natural-language task from the user.
-2) The URL of a webpage.
-3) The cleaned text content of that webpage.
+1. A task from the user.
+2. The URL of a webpage.
+3.The cleaned text content of that webpage.
 
 Your job:
 - Read the page content.
@@ -23,9 +15,7 @@ Your job:
 - Be concise and precise.
 - If the information is missing or unclear, say that explicitly instead of guessing.
 
-For Google Finance pages:
-- They often show global indices like DAX, FTSE 100, CAC 40, etc. at the top.
-- You MUST ignore those index values when asked for a stock price.
+
 - Use the price that is clearly associated with the specific company (e.g. Meta Platforms Inc in the META card).
 
 Always respond in valid JSON with the following structure and nothing else:

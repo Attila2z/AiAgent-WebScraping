@@ -28,7 +28,30 @@ Always respond in valid JSON with the following structure and nothing else:
   "notes": "<optional extra info or null>"
 }
 """
+SYSTEM_MESSAGE_VERIFIER = """You are a VerificationAgent.
 
+You will receive:
+1. The original  task from the user.
+2) The URL of a webpage.
+3) The cleaned text content of that webpage.
+4) A JSON answer produced by another agent, using the schema below.
+
+Your job:
+- Carefully compare the candidate JSON answer with the page content and the task.
+- If the answer is correct and well supported by the page, keep the same values and, if appropriate, increase the confidence or add a short confirmation note.
+- If parts of the answer are inaccurate, missing, or unsupported by the page, correct the fields (answer, extracted_value, unit_or_currency, confidence, notes).
+- If the required information is not present on the page, set extracted_value to null, unit_or_currency to null, and explain this in notes instead of guessing.
+
+Always respond in valid JSON with the following structure and nothing else:
+
+{
+  "answer": "<short natural-language answer>",
+  "extracted_value": "<if there is a key numeric or string value, put it here, otherwise null>",
+  "unit_or_currency": "<e.g. USD or null>",
+  "confidence": "<low|medium|high>",
+  "notes": "<optional extra info or null>"
+}
+"""
 
 def create_web_scraping_agent() -> AssistantAgent:
     """Create and configure the AutoGen assistant agent."""
@@ -38,6 +61,13 @@ def create_web_scraping_agent() -> AssistantAgent:
         system_message=SYSTEM_MESSAGE,
     )
 
+def create_verifier_agent() -> AssistantAgent:
+    """Create and configure the AutoGen assistant agent (verifier)."""
+    return AssistantAgent(
+        name="web_scraper_verifier",
+        llm_config=LLM_CONFIG,
+        system_message=SYSTEM_MESSAGE_VERIFIER,
+    )
 
 def _normalize_agent_output(raw_text: str) -> dict:
     """Parse the agent's reply as JSON and normalize it to the expected schema.
@@ -99,6 +129,51 @@ Page content:
     )
 
     # Depending on AutoGen version, reply may be a dict or a plain string.
+    if isinstance(reply, dict):
+        raw_text = str(reply.get("content", "")).strip()
+    else:
+        raw_text = str(reply).strip()
+
+    return _normalize_agent_output(raw_text)
+
+def verify_agent(
+    verifier: AssistantAgent,
+    extractor_result: dict,
+    task: str,
+    url: str,
+    page_text: str,
+) -> dict:
+    """Send the extractor's JSON result to the verifier agent for checking/correction.
+
+    Args:
+        verifier: The VerificationAgent instance.
+        extractor_result: The JSON dict produced by the extractor agent.
+        task: The original natural-language task.
+        url: Page URL.
+        page_text: Cleaned text content of the page.
+
+    Returns:
+        A dictionary with the same JSON schema as the extractor's output.
+    """
+    candidate_json = json.dumps(extractor_result, ensure_ascii=False, indent=2)
+
+    user_message = f"""Original task:
+{task}
+
+Page URL:
+{url}
+
+Page content:
+{page_text}
+
+Candidate JSON answer from another agent:
+{candidate_json}
+"""
+
+    reply = verifier.generate_reply(
+        messages=[{"role": "user", "content": user_message}]
+    )
+
     if isinstance(reply, dict):
         raw_text = str(reply.get("content", "")).strip()
     else:

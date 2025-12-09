@@ -52,11 +52,6 @@ Important files:
 
 ## 2. Setup
 
-### 2.1. Clone the repository
-
-```bash
-git clone https://github.com/<your-username>/<your-repo>.git
-cd <your-repo>
 
 ### 2.2 Create a virtual environment
 py -3.12 -m venv venv

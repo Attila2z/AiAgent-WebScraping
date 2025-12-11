@@ -4,18 +4,18 @@
     "url": "https://www.google.com/finance/quote/META:NASDAQ",
     "task": "Extract the current stock price of META in USD from this Google Finance page. Ignore any global indices such as DAX, FTSE 100, CAC 40, etc. Use the price that is clearly associated with Meta Platforms Inc.",
     "extractor_output": {
-      "answer": "The current stock price of META is $666.80.",
-      "extracted_value": 666.8,
+      "answer": "The current stock price of META is $650.13.",
+      "extracted_value": 650.13,
       "unit_or_currency": "USD",
       "confidence": "high",
-      "notes": "The price is clearly associated with Meta Platforms Inc and is the 'After Hours' price, which is the most recent available."
+      "notes": "The price is clearly associated with Meta Platforms Inc and is the 'After Hours' price, which is the most recent price available."
     },
     "verifier_output": {
-      "answer": "The current stock price of META is $666.80.",
-      "extracted_value": 666.8,
+      "answer": "The current stock price of META is $650.13.",
+      "extracted_value": 650.13,
       "unit_or_currency": "USD",
       "confidence": "high",
-      "notes": "The price is clearly associated with Meta Platforms Inc and is the 'After Hours' price, which is the most recent available. The page also provides the 'Closed' price of $673.42, but the 'After Hours' price is more up-to-date."
+      "notes": "The price is clearly associated with Meta Platforms Inc and is the 'After Hours' price, which is the most recent price available. The page also provides the 'Closed' price of $656.96, but the 'After Hours' price is more up-to-date."
     }
   },
   {
@@ -23,18 +23,18 @@
     "url": "https://www.google.com/finance/quote/META:NASDAQ",
     "task": "Summarize the key information about META from this page.",
     "extractor_output": {
-      "answer": "Meta Platforms Inc (META) is an American multinational technology company with a market cap of 1.68T USD. It operates several social media platforms and communication services, with advertising accounting for 97.8% of its total revenue. The stock price is $666.80 after hours, with a day range of $665.07 - $676.71 and a year range of $479.80 - $796.25. The P/E ratio is 29.51 and the dividend yield is 0.31%.",
-      "extracted_value": 666.8,
+      "answer": "Meta Platforms Inc (META) is currently trading at $650.13. Its market cap is 1.64T USD, with an average volume of 23.79M shares traded daily. The P/E ratio is 28.77 and the dividend yield is 0.32%.",
+      "extracted_value": 650.13,
       "unit_or_currency": "USD",
       "confidence": "high",
-      "notes": "The information is based on the latest data available on the Google Finance page for META."
+      "notes": "The price is the closing price for the day."
     },
     "verifier_output": {
-      "answer": "Meta Platforms Inc (META) is an American multinational technology company with a market cap of 1.68T USD. It operates several social media platforms and communication services, with advertising accounting for 97.8% of its total revenue. The stock price is $666.80 after hours, with a day range of $665.07 - $676.71 and a year range of $479.80 - $796.25. The P/E ratio is 29.51 and the dividend yield is 0.31%.",
-      "extracted_value": 666.8,
+      "answer": "Meta Platforms Inc (META) is currently trading at $650.13. Its market cap is 1.64T USD, with an average volume of 23.79M shares traded daily. The P/E ratio is 28.77 and the dividend yield is 0.32%.",
+      "extracted_value": 650.13,
       "unit_or_currency": "USD",
       "confidence": "high",
-      "notes": "The information is based on the latest data available on the Google Finance page for META. The candidate answer is correct and well-supported by the page content."
+      "notes": "The price is the closing price for the day. The page also mentions that the stock is listed on NASDAQ."
     }
   },
   {
@@ -42,18 +42,18 @@
     "url": "https://www.google.com/finance/quote/AAPL:NASDAQ",
     "task": "Extract the current stock price of AAPL in USD from this Google Finance page. Use the price that is clearly associated with Apple Inc.",
     "extractor_output": {
-      "answer": "The current stock price of AAPL is $277.89.",
-      "extracted_value": 277.89,
+      "answer": "The current stock price of AAPL is $278.78.",
+      "extracted_value": 278.78,
       "unit_or_currency": "USD",
       "confidence": "high",
-      "notes": "The price is clearly associated with Apple Inc."
+      "notes": "Price is for after hours trading."
     },
     "verifier_output": {
-      "answer": "The current stock price of AAPL is $277.89.",
-      "extracted_value": 277.89,
+      "answer": "The current stock price of AAPL is $278.78.",
+      "extracted_value": 278.78,
       "unit_or_currency": "USD",
       "confidence": "high",
-      "notes": "The price is clearly associated with Apple Inc. and is the 'After Hours' price, which is the most recent price available on the page."
+      "notes": "Price is for after hours trading. The page also provides the closed price of $277.18 for the previous day."
     }
   },
   {
@@ -61,18 +61,18 @@
     "url": "https://www.google.com/finance/quote/MSFT:NASDAQ",
     "task": "Summarize the key information about Microsoft (MSFT) from this page.",
     "extractor_output": {
-      "answer": "Microsoft Corp (MSFT) is an American multinational technology conglomerate headquartered in Redmond, Washington. It's the largest software company by revenue, one of the most valuable public companies, and one of the most valuable brands globally. The current price is $491.02, with a market cap of 3.65T USD and an average volume of 25.93M shares traded each day over the past 30 days.",
-      "extracted_value": 491.02,
+      "answer": "Microsoft Corp (MSFT) is trading at $478.32 after hours, down 0.26% from its closing price of $492.02. Its market cap is $3.56T. The stock is listed on NASDAQ and is headquartered in Redmond, Washington, USA.",
+      "extracted_value": 478.32,
       "unit_or_currency": "USD",
       "confidence": "high",
-      "notes": "The price is the closing price from December 8, 2025."
+      "notes": "The price is the after-hours price, not the current price."
     },
     "verifier_output": {
-      "answer": "Microsoft Corp (MSFT) is an American multinational technology conglomerate headquartered in Redmond, Washington. It's the largest software company by revenue, one of the most valuable public companies, and one of the most valuable brands globally. The current price is $491.02, with a market cap of 3.65T USD and an average volume of 25.93M shares traded each day over the past 30 days.",
-      "extracted_value": 491.02,
+      "answer": "Microsoft Corp (MSFT) is trading at $478.32 after hours, down 0.26% from its closing price of $492.02. Its market cap is $3.56T. The stock is listed on NASDAQ and is headquartered in Redmond, Washington, USA.",
+      "extracted_value": 478.32,
       "unit_or_currency": "USD",
       "confidence": "high",
-      "notes": "The price is the closing price from December 8, 2025."
+      "notes": "The price is the after-hours price, not the current price. Additionally, the page does not provide the 52-week range, which was not mentioned in the answer."
     }
   }
 ]
